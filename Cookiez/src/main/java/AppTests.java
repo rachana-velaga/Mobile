@@ -5,7 +5,6 @@ import java.net.MalformedURLException;
 import java.net.URL;
 
 import io.appium.java_client.android.AndroidDriver;
-import gov.seattle.itd.automation.listeners.ExecutionListener;
 import io.appium.java_client.MobileBy;
 import io.appium.java_client.MobileElement;
 import io.appium.java_client.service.local.AppiumDriverLocalService;

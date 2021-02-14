@@ -2,7 +2,6 @@ import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.Map;
 
-import gov.seattle.itd.automation.utilities.ArtifactoryDownloader;
 import io.appium.java_client.MobileBy;
 import org.junit.Assert;
 import org.openqa.selenium.WebElement;
@@ -10,7 +9,7 @@ import org.openqa.selenium.remote.DesiredCapabilities;
 import io.appium.java_client.android.AndroidDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-import gov.seattle.itd.automation.utilities.KeePass;
+
 
 public class Base {
 	
