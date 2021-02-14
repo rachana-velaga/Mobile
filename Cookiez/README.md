@@ -24,10 +24,8 @@ Reference: http://appium.io/docs/en/about-appium/getting-started/
 Run locally (Android app)
 
 <br>-Dcapabilities="androidapp"
-<br>-Dapkfilename="findit_fix_it.apk"
 <br>-Denvironment="local"
 <br>-DappWaitActivity="com.connectedbits.spot.ui.DashboardActivity"
-<br>-DappPackage="gov.seattle.searequests"
 
 Run local Android web
 
@@ -37,10 +35,8 @@ Run local Android web
 Run on Sauce Labs Android app
 
 <br>-Dcapabilities="androidapp"
-<br>-Dapkfilename="findit_fix_it"
 <br>-Denvironment="saucelabs"
 <br>-DappWaitActivity="com.connectedbits.spot.ui.DashboardActivity"
-<br>-DappPackage="gov.seattle.searequests"
 <br>-DsaucelabsKey="692c1975-0446-4064-8912-aab7522cb490"
 <br>-DsaucelabsUser="exta02"
 <br>-DsaucelabsAppUrl="http://saucelabs.com/example_files/ContactManager.apk"
