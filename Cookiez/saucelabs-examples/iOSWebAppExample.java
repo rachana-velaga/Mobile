@@ -24,7 +24,7 @@ public class iOSWebAppExample {
 
         // create the driver
         WebDriver driver = new IOSDriver(new URL(URL), caps);
-        driver.get("http://www.seattle.gov/");
+        driver.get("http://www.google.com/");
         driver.findElement(By.id("searchIcon")).click();
         driver.findElement(By.id("searchInput")).sendKeys("Hey this is really working?!?!?!");
         driver.findElement(By.id("searchButton")).click();

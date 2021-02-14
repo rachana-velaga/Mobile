@@ -1,6 +1,5 @@
 import java.net.MalformedURLException;
 
-import gov.seattle.itd.automation.listeners.ExecutionListener;
 import io.appium.java_client.service.local.AppiumDriverLocalService;
 import org.openqa.selenium.By;
 import org.openqa.selenium.remote.DesiredCapabilities;
@@ -10,7 +9,7 @@ import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 import io.appium.java_client.android.AndroidDriver;
-import gov.seattle.itd.base.TestRunnerBase;
+
 
 public class WebTests extends Base {
 
@@ -20,10 +19,7 @@ public class WebTests extends Base {
 	AndroidDriver driver = null;
     private AppiumDriverLocalService appiumService;
 	private ExecutionListener executionListener;
-	private String program = "CIS";
-	private String app = "Kubra";
-	private String env = "QA";
-	private String user = "reddy678";
+
 
     @BeforeTest
 	public void beforeSuite() throws MalformedURLException {
@@ -67,7 +63,7 @@ public class WebTests extends Base {
 		loginPage = new LoginPage(driver);
 
     	// Go to the login page and click "Pay as Guest"
-		loginPage.goToLoginPage("https://prep8.i-doxs.net/SeattleUtilities/SignIn.aspx");
+		loginPage.goToLoginPage(url);
     	loginPage.logIntoKubra("t_aboda", getPassword(program, app, env, user));
 
         Assert.assertEquals(driver.getTitle(), "Sign-in Protection - SeattleUtilities");
@@ -76,10 +72,9 @@ public class WebTests extends Base {
     @Test
     public void searchAndFilterAccount() {
         loginPage = new LoginPage(driver);
-        securityQuestionsPage = new SecurityQuestionsPage(driver);
         homePage = new HomePage(driver);
 
-        loginPage.goToLoginPage("https://prep8.i-doxs.net/SeattleUtilities/SignIn.aspx");
+        loginPage.goToLoginPage(url);
         loginPage.logIntoKubra("t_aboda", getPassword(program, app, env, user));
 
         securityQuestionsPage.answerSecurityQuestion("movie");
