@@ -14,7 +14,6 @@ import io.appium.java_client.android.AndroidDriver;
 public class WebTests extends Base {
 
 	LoginPage loginPage = null;
-	SecurityQuestionsPage securityQuestionsPage = null;
 	HomePage homePage = null;
 	AndroidDriver driver = null;
     private AppiumDriverLocalService appiumService;
@@ -64,9 +63,9 @@ public class WebTests extends Base {
 
     	// Go to the login page and click "Pay as Guest"
 		loginPage.goToLoginPage(url);
-    	loginPage.logIntoKubra("t_aboda", getPassword(program, app, env, user));
+    	loginPage.logIn("t_aboda", getPassword(program, app, env, user));
 
-        Assert.assertEquals(driver.getTitle(), "Sign-in Protection - SeattleUtilities");
+        Assert.assertEquals(driver.getTitle(), "Welcome!");
     }
 
     @Test
@@ -75,9 +74,7 @@ public class WebTests extends Base {
         homePage = new HomePage(driver);
 
         loginPage.goToLoginPage(url);
-        loginPage.logIntoKubra("t_aboda", getPassword(program, app, env, user));
-
-        securityQuestionsPage.answerSecurityQuestion("movie");
+        loginPage.logIn("t_aboda", getPassword(program, app, env, user));
 
         // Apply account filter and verify results
         homePage.applyAccountFilter("4389110000");

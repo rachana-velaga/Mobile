@@ -22,7 +22,7 @@ public class AndroidAppExample {
         caps.setCapability("deviceOrientation", "portrait");
 
         // create the driver
-        WebDriver driver = new AndroidDriver(new URL(URL), caps);
+        WebDriver driver = new AndroidDriver(new URL("https://prep8.i-doxs.net/testpages.aspx"), caps);
 
         driver.quit();
     }
