@@ -64,7 +64,6 @@ public class AppTests extends Base{
 		appiumService.start();
 
 		this.driver = setupAppiumServer(caps, environment);
-		// this.driver = base.setupAppiumServer(caps, environment);
 		this.wait = new WebDriverWait(driver, explicitWaitTimeoutInSeconds);
 
 		uninstallApp(testAppPackage);
