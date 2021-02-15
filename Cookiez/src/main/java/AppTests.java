@@ -26,11 +26,10 @@ public class AppTests extends Base{
 	AndroidDriver driver = null;
 	private AppiumDriverLocalService appiumService;
 	private ExecutionListener executionListener;
-	final String testAppName = "finditfixit";
+	final String testAppName = "candy crush saga";
 	private static long INSTALL_DURATION_IN_SECONDS = 60L;
 	private long explicitWaitTimeoutInSeconds = 10L;
 	private WebDriverWait wait;
-	final String testAppPackage = "gov.seattle.searequests";
 
 	@BeforeTest
 	public void beforeSuite() throws IOException, InterruptedException {
@@ -41,13 +40,6 @@ public class AppTests extends Base{
 		String capabilities = environment + System.getProperty("capabilities");
 		String apkFileName = System.getProperty("apkfilename");
 
-
-
-		// Download TestAccounts.kdbx
-		//executionListener.onExecutionStart();
-
-		// Download apk from Artifactory
-		//downloadApkFromArtifactory(apkFileName);
 
 		if (capabilities.equals("localandroidweb")) {
 			caps = base.getLocalAndroidWebCapabilities();
@@ -72,7 +64,6 @@ public class AppTests extends Base{
 		appiumService.start();
 
 		this.driver = setupAppiumServer(caps, environment);
-		// this.driver = base.setupAppiumServer(caps, environment);
 		this.wait = new WebDriverWait(driver, explicitWaitTimeoutInSeconds);
 
 		uninstallApp(testAppPackage);
@@ -93,8 +84,7 @@ public class AppTests extends Base{
 		System.out.println("Installed yay !!!");
 		String lastActivityName = driver.currentActivity();
 		System.out.println(""+lastActivityName);
-		driver.startActivity(testAppPackage,"com.connectedbits.spot.ui.DashboardActivity") ; 
-		getAndroidElementById("gov.seattle.searequests:id/btn_dashboard_preferences").click();
+
 	}
 
 
@@ -118,9 +108,6 @@ public class AppTests extends Base{
 
 		p.waitFor();
 	}
-
-
-
 
 	@AfterSuite
 	public void afterSuite() {

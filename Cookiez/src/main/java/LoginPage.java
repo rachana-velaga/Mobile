@@ -15,7 +15,7 @@ public class LoginPage extends Base {
      * @param userName
      * @param password
      */
-    public void logIntoKubra(String userName, String password) {
+    public void logIn(String userName, String password) {
         inputText(getElementById(userNameTextField), userName);
         inputText(getElementById(passwordTextField), password);
 
@@ -23,7 +23,7 @@ public class LoginPage extends Base {
     }
 
     public void goToLoginPage(String url) {
-        goToUrl(url);
+        goToUrl("www.macys.com");
     }
 
 }

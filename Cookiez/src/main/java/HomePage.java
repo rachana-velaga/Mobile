@@ -5,25 +5,20 @@ public class HomePage extends Base {
     String applyFilterLink = "linkFilterPanel";
     String filterAccountNumberField = "main_txtAccountNumber";
     String applyFilterButton = "main_btnApply";
-    String resetFilterButton = "main_lnkClear";
-    String showStatus = "main_lblAccountsShowingStatus";
+    String results = "main_lblResults";
 
     public HomePage(AndroidDriver driver){
         super.driver = driver;
     }
 
-    public void applyAccountFilter(String accountNumber) {
+    public void applyFilter(String item) {
         getElementById(applyFilterLink).click();
-        inputText(getElementById(filterAccountNumberField), accountNumber);
+        inputText(getElementById(filterAccountNumberField), item);
         getElementById(applyFilterButton).click();
     }
 
-    public void resetAccountFilter() {
-        getElementById(applyFilterLink).click();
-        getElementById(resetFilterButton).click();
-    }
 
-    public String getAccountShowingStatus() {
-        return getElementById(showStatus).getText();
+    public String getResults() {
+        return getElementById(results).getText();
     }
 }
