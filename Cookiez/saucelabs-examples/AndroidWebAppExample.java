@@ -23,9 +23,8 @@ public class AndroidWebAppExample {
 
         // create the driver
         AppiumDriver<MobileElement> driver = new AndroidDriver<>(new URL(URL), caps);
-        driver.get("https://prep8.i-doxs.net/testpages.aspx");
-        driver.findElement(By.linkText("Pay as Guest")).click();
-
+        driver.get("www.google.com");
+        driver.findElement(By.linkText("Images")).click();
         driver.quit();
     }
 }

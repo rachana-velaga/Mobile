@@ -61,7 +61,7 @@ public class WebTests extends Base {
     public void testLogin() {
 		loginPage = new LoginPage(driver);
 
-    	// Go to the login page and click "Pay as Guest"
+    	// Go to the login page 
 		loginPage.goToLoginPage(url);
     	loginPage.logIn("t_aboda", getPassword(program, app, env, user));
 
@@ -69,20 +69,17 @@ public class WebTests extends Base {
     }
 
     @Test
-    public void searchAndFilterAccount() {
+    public void searchAndFilter() {
         loginPage = new LoginPage(driver);
         homePage = new HomePage(driver);
 
         loginPage.goToLoginPage(url);
         loginPage.logIn("t_aboda", getPassword(program, app, env, user));
 
-        // Apply account filter and verify results
-        homePage.applyAccountFilter("4389110000");
-        Assert.assertEquals(homePage.getAccountShowingStatus(), "Record 1 of 1");
+        // search for item and verify results
+        homePage.applyFilter("women biker jacket");
+        Assert.assertEquals(homePage.getresults(), "101 results");
 
-        // Reset Account filter and verify results
-        homePage.resetAccountFilter();
-		Assert.assertEquals(homePage.getAccountShowingStatus(), "Record 5 of 450");
     }
 
     
